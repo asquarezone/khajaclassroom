@@ -1,0 +1,36 @@
+[submodule "windows/powershell"]
+	path = windows/powershell
+	url = https://github.com/asquarezone/WindowsServerS.git
+[submodule "aws/developer"]
+	path = aws/developer
+	url = https://github.com/asquarezone/awsdev.git
+[submodule "devops/terraform"]
+	path = devops/terraform
+	url = https://github.com/asquarezone/TerraformZone.git
+[submodule "azure/developer"]
+	path = azure/developer
+	url = https://github.com/asquarezone/azuredev.git
+[submodule "azure/arm"]
+	path = azure/arm
+	url = https://github.com/asquarezone/ARMZone.git
+[submodule "python/batch1"]
+	path = python/batch1
+	url = https://github.com/KhajaPythonZone/PythonBatch1.git
+[submodule "jenkins/sample"]
+	path = jenkins/sample
+	url = https://github.com/dummyrepos/game-of-life.git
+[submodule "devops/containers"]
+	path = devops/containers
+	url = https://github.com/asquarezone/ContainerZone.git
+[submodule "devops/ansible"]
+	path = devops/ansible
+	url = https://github.com/asquarezone/AnsibleZone.git
+[submodule "devops/chef"]
+	path = devops/chef
+	url = https://github.com/asquarezone/ChefZone.git
+[submodule "devops/packer"]
+	path = devops/packer
+	url = https://github.com/asquarezone/CloudFormationTemplates.git
+[submodule "azure/dev"]
+	path = azure/dev
+	url = https://github.com/asquarezone/azuredev.git
