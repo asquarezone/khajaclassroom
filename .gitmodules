@@ -31,3 +31,6 @@
 [submodule "devops/packer"]
 	path = devops/packer
 	url = https://github.com/asquarezone/CloudFormationTemplates.git
+[submodule "azure/azureadmin"]
+	path = azure/azureadmin
+	url = https://github.com/asquarezone/azurescripts.git
