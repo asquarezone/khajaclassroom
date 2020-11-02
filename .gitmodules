@@ -34,3 +34,6 @@
 [submodule "azure/azureadmin"]
 	path = azure/azureadmin
 	url = https://github.com/asquarezone/azurescripts.git
+[submodule "devops/docker"]
+	path = devops/docker
+	url = https://github.com/asquarezone/DockerClass.git
