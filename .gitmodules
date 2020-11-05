@@ -37,3 +37,6 @@
 [submodule "devops/docker"]
 	path = devops/docker
 	url = https://github.com/asquarezone/DockerClass.git
+[submodule "aws/administration"]
+	path = aws/administration
+	url = https://github.com/asquarezone/awsadministration.git
