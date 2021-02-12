@@ -40,3 +40,9 @@
 [submodule "aws/administration"]
 	path = aws/administration
 	url = https://github.com/asquarezone/awsadministration.git
+[submodule "devops/k8s"]
+	path = devops/k8s
+	url = https://github.com/asquarezone/KubernetesZone.git
+[submodule ".\\devops\\elasticstack"]
+	path = .\\devops\\elasticstack
+	url = https://github.com/asquarezone/ElasticStackZone.git
