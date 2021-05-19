@@ -49,3 +49,6 @@
 [submodule "google/administration"]
 	path = google/administration
 	url = https://github.com/asquarezone/GcpAdministration.git
+[submodule "python_intensive"]
+	path = python_intensive
+	url = https://github.com/pythonbykhaja/intesivepython.git
