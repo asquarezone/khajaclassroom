@@ -46,3 +46,6 @@
 [submodule ".\\devops\\elasticstack"]
 	path = .\\devops\\elasticstack
 	url = https://github.com/asquarezone/ElasticStackZone.git
+[submodule "google/administration"]
+	path = google/administration
+	url = https://github.com/asquarezone/GcpAdministration.git
