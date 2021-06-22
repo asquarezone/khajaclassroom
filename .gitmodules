@@ -52,3 +52,6 @@
 [submodule "python_intensive"]
 	path = python_intensive
 	url = https://github.com/pythonbykhaja/intesivepython.git
+[submodule "ExpertK8s"]
+	path = ExpertK8s
+	url = https://github.com/asquarezone/ExpertKubernetes.git
