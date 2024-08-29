@@ -11,7 +11,7 @@ if not is_valid:
 # if the n is valid
 is_even = n%2 == 0
 if not is_even :
-    print('Not Weird')
+    print('Weird')
 else:
     if 2 <= n <= 5:
         print('Not Weird')
