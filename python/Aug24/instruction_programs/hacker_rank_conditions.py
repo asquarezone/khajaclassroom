@@ -16,6 +16,6 @@ else:
     if 2 <= n <= 5:
         print('Not Weird')
     elif 6 <= n <= 20:
-        print ('Wierd')
+        print ('Weird')
     else:
         print('Not Weird')
