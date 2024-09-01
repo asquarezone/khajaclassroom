@@ -50,4 +50,3 @@ def largest_prime_factor(number):
 
 
 print(largest_prime_factor(13195))
-

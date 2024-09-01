@@ -16,6 +16,15 @@ def main():
         choice = input('Do you want to continue? (y/n): ').lower()
 
 
+def new_main():
+    n = int(input())
+    result = 1
+    for index in range(2, result):
+        # 1-9
+        # 10-99
+        #>100
+        result = result * 10 + index
+
 
 if __name__ == '__main__':
-    main()
+    new_main()
