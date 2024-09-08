@@ -1,5 +1,6 @@
 """This module tests calculators
 """
+import pytest
 from src.finance.calculators import is_even, is_prime
 
 def test_is_even_simple():
@@ -28,3 +29,6 @@ def test_is_prime_tricky():
     """
     assert is_prime(0) is False
     assert is_prime(1) is False
+    # from test code we are expecting exception
+    with pytest.raises(ValueError):
+        is_prime(1.1)
