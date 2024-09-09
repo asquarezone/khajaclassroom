@@ -1,0 +1,27 @@
+{
+    "careerobjective": "Results-driven DevOps Engineer with 6 years of experience in implementing scalable solutions and optimizing CI/CD pipelines, seeking to contribute by improving system reliability and deployment speed.",
+    "professionalsummary": "Over 6+ years of IT Industry experience as a DevOps Engineer, with Configuration Management, Build, Release Management and Quality Assurance using CVS, Subversion, GIT, Mercurial & Clear Quest on UNIX and Windows environment. Knowledge of puppet as a Configuration Management tool, to automate repetitive tasks, quickly deploy critical applications, and proactively manage change. Set up the framework for one clicks build and deployment on non-production environments",
+    "skills": {
+        "Servers": [
+            "Tomcat",
+            "HTTP Server",
+            "Weblogic"
+        ],
+        "Bug Reporting Tools": [
+            "SDM-12",
+            "BugZilla",
+            "JIRA",
+            "Confluence",
+            "Rational Clear Quest"
+        ],
+        "DevOps": [
+            "Chef",
+            "Puppet",
+            "OpenStack",
+            "AWS",
+            "Ansible",
+            "Docker",
+            "Vagrant"
+        ]
+    }
+}

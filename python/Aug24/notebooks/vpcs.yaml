@@ -1,0 +1,16 @@
+Vpcs:
+- CidrBlock: 172.31.0.0/16
+  CidrBlockAssociationSet:
+  - AssociationId: vpc-cidr-assoc-0b480c0929de4c783
+    CidrBlock: 172.31.0.0/16
+    CidrBlockState:
+      State: associated
+  DhcpOptionsId: dopt-0c66261d769f25225
+  InstanceTenancy: default
+  IsDefault: true
+  OwnerId: '381491878286'
+  State: available
+  Tags:
+  - Key: Name
+    Value: Default VPC
+  VpcId: vpc-06e49f59e4246fd88
