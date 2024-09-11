@@ -21,8 +21,10 @@ class BookRequest(BaseModel):
 class BookResponse(BaseModel):
     """This represents the response
     """
-    id: str = Field(...,description="id",example="book_1")
+    id: int = Field(...,description="id",example="1")
     title: str = Field(...,description="book title",example="Dopamine Detox")
     author: str = Field(...,example="Thibaut Meurissee", description="author")
     isbn: str
     published_date: date
+    class Config:
+        orm_mode = True
