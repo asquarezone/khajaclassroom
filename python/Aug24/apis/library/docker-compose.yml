@@ -1,6 +1,6 @@
 
 services:
-  library:
+  library-api:
     build: .
     container_name: fastapi_app
     restart: always
