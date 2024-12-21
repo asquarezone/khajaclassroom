@@ -1,0 +1,16 @@
+{
+    "abc@gmail.com": {
+        "name": "abc",
+        "email": "abc@gmail.com",
+        "course": "python"
+    },
+    "abd@gmail.com": {
+        "name": "abd",
+        "email": "abd@gmail.com",
+        "course": "python"
+    },"abe@gmail.com": {
+        "name": "abe",
+        "email": "abe@gmail.com",
+        "course": "python"
+    }
+}
