@@ -1,5 +1,5 @@
 """
-models.py
+view_models.py
 
 This module contians the design for request and response models
 """
@@ -24,7 +24,7 @@ class ProductResponseModel(BaseModel):
     This model represents the request for Product
     """
 
-    id: str
+    id: int
     name: str
     sku: str
     price: float
