@@ -41,31 +41,25 @@ def create_product(
     """Ths api will create product"""
     # store the product in database
     db_product = Product(
-        name = product.name,
-        sku = product.sku,
-        price = product.price,
-        stock = product.stock,
-        description = product.description
-    )
-    db.add(db_product)
-    db.commit()
-    db.refresh(db_product)
-    # generate a response
-    return ProductResponseModel(
-        id=db_product.id,
         name=product.name,
         sku=product.sku,
         price=product.price,
         stock=product.stock,
         description=product.description,
     )
+    db.add(db_product)
+    db.commit()
+    db.refresh(db_product)
+    # generate a response
+    return db_product
+
 
 @app.delete("/products/{id}")
-def delete_product(id: int, db: Session = Depends(get_db)):
+def delete_product(product_id: int, db: Session = Depends(get_db)):
     """This method deletes the product based on id
 
     Args:
-        id (int): product id
+        product_id (int): product id
         db (Session, optional): _description_. Defaults to Depends(get_db).
 
     Raises:
@@ -74,12 +68,79 @@ def delete_product(id: int, db: Session = Depends(get_db)):
     Returns:
         message
     """
-    product = db.query(Product).filter(Product.id == id).first()
+    product = db.query(Product).filter(Product.id == product_id).first()
     if product is None:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, 
-            detail="Product not found")
+            status_code=status.HTTP_404_NOT_FOUND, detail="Product not found"
+        )
     db.delete(product)
     db.commit()
     return {"detail": "Product deleted"}
 
+
+@app.get("/products/")
+def get_products(
+    skip: int = 0, limit: int = 10, db: Session = Depends(get_db)
+) -> list[ProductResponseModel]:
+    """This method returns products
+
+    Args:
+        skip (int, optional): _description_. Defaults to 0.
+        limit (int, optional): _description_. Defaults to 10.
+        db (Session, optional): _description_. Defaults to Depends(get_db).
+
+    Returns:
+        list[ProductResponseModel]: _description_
+    """
+    products = db.query(Product).offset(skip).limit(limit).all()
+    return products
+
+
+@app.get("/products/{product_id}")
+def get_product(product_id: int, db: Session = Depends(get_db)) -> ProductResponseModel:
+    """This method returns the product by id
+
+    Args:
+        product_id (int): _description_
+        db (Session, optional): _description_. Defaults to Depends(get_db).
+
+    Raises:
+        HTTPException: _description_
+
+    Returns:
+        ProductResponseModel: _description_
+    """
+    product = db.query(Product).filter(Product.id == product_id).first()
+    if product is None:
+        raise HTTPException(status_code=404, detail="Product not found")
+    return product
+
+
+@app.put("/products/{product_id}")
+def update_product(
+    product_id: int, product: ProductRequestModel, db: Session = Depends(get_db)
+) -> ProductResponseModel:
+    """This method updates the produc
+
+    Args:
+        product_id (int): _description_
+        product (ProductRequestModel): _description_
+        db (Session, optional): _description_. Defaults to Depends(get_db).
+
+    Raises:
+        HTTPException: _description_
+
+    Returns:
+        ProductResponseModel: _description_
+    """
+    queried_product = db.query(Product).filter(Product.id == product_id).first()
+    if queried_product is None:
+        raise HTTPException(status_code=404, detail="Product not found")
+    queried_product.name = product.name
+    queried_product.price = product.price
+    queried_product.stock = product.stock
+    queried_product.sku = product.sku
+    queried_product.description = product.description
+    db.commit()
+    db.refresh(queried_product)
+    return queried_product

@@ -30,3 +30,6 @@ class ProductResponseModel(BaseModel):
     price: float
     stock: int
     description: str
+    
+    class Config:
+        orm_mode = True
