@@ -15,7 +15,7 @@ Base.metadata.create_all(bind=engine)
 
 
 # Get database
-def get_db():
+async def get_db():
     """
     This method gets the database connection
     """
@@ -35,7 +35,7 @@ app = FastAPI(
 
 
 @app.post("/products", status_code=status.HTTP_201_CREATED)
-def create_product(
+async def create_product(
     product: ProductRequestModel, db: Session = Depends(get_db)
 ) -> ProductResponseModel:
     """Ths api will create product"""
@@ -55,7 +55,7 @@ def create_product(
 
 
 @app.delete("/products/{id}")
-def delete_product(product_id: int, db: Session = Depends(get_db)):
+async def delete_product(product_id: int, db: Session = Depends(get_db)):
     """This method deletes the product based on id
 
     Args:
@@ -79,7 +79,7 @@ def delete_product(product_id: int, db: Session = Depends(get_db)):
 
 
 @app.get("/products/")
-def get_products(
+async def get_products(
     skip: int = 0, limit: int = 10, db: Session = Depends(get_db)
 ) -> list[ProductResponseModel]:
     """This method returns products
@@ -97,7 +97,7 @@ def get_products(
 
 
 @app.get("/products/{product_id}")
-def get_product(product_id: int, db: Session = Depends(get_db)) -> ProductResponseModel:
+async def get_product(product_id: int, db: Session = Depends(get_db)) -> ProductResponseModel:
     """This method returns the product by id
 
     Args:
@@ -117,7 +117,7 @@ def get_product(product_id: int, db: Session = Depends(get_db)) -> ProductRespon
 
 
 @app.put("/products/{product_id}")
-def update_product(
+async def update_product(
     product_id: int, product: ProductRequestModel, db: Session = Depends(get_db)
 ) -> ProductResponseModel:
     """This method updates the produc
